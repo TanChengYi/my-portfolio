@@ -39,3 +39,18 @@ The contact section uses a simple `mailto:` link. If you prefer Formspree, updat
 ## Deployment
 
 This site is configured for GitHub Pages. Push changes to the default branch and visit the live demo URL above.
+
+## Theme system
+
+The site supports multiple visual themes. Use the selector in the navigation bar to switch between:
+
+- **Futuristic Neon** (default)
+- **Professional Corporate**
+- **System Default** – follows your operating system preference.
+
+The chosen theme is stored in `localStorage` and re-applied on future visits. You can also force a theme through URL parameters:
+
+- `?theme=neon`
+- `?theme=corporate`
+
+To add a new theme, create a CSS file under `css/` that defines variables inside `html[data-theme="YOUR_THEME"] { ... }` and reference it in `index.html`.

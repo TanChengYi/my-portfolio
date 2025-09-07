@@ -1,0 +1,35 @@
+html[data-theme="corporate"] {
+  --bg-color: #F7F9FC;
+  --text-color: #0C1222;
+  --text-secondary: #44506B;
+  --accent1: #2563EB;
+  --accent2: #0EA5E9;
+  --card-bg: #FFFFFF;
+  --card-border: rgba(0,0,0,0.05);
+  --nav-bg: rgba(255,255,255,0.9);
+  --btn-bg: #2563EB;
+  --btn-text-color: #FFFFFF;
+  --nav-link-hover: none;
+  --card-hover-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --btn-hover-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  --contact-bg: #F7F9FC;
+  --subtle-bg: rgba(0,0,0,0.05);
+  --text-muted: #44506B;
+  --focus-outline: #2563EB;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+}
+
+html[data-theme="corporate"] .nav-link:hover {
+  text-shadow: none;
+  border-bottom: 2px solid var(--accent1);
+}
+html[data-theme="corporate"] .card h3 {
+  color: var(--accent1);
+}
+html[data-theme="corporate"] .btn {
+  background: var(--btn-bg);
+}
+html[data-theme="corporate"] .navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
