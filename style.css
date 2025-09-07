@@ -18,6 +18,12 @@ body {
   line-height: 1.6;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 h1, h2, h3 {
   font-family: var(--font-heading);
 }
@@ -46,6 +52,10 @@ h1, h2, h3 {
   border-radius: 4px;
 }
 
+.nav-link:hover {
+  text-shadow: 0 0 6px var(--accent1), 0 0 12px var(--accent2);
+}
+
 .nav-link.active, .nav-link:focus {
   background: linear-gradient(45deg, var(--accent1), var(--accent2));
   color: #000;
@@ -54,7 +64,7 @@ h1, h2, h3 {
 
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 4rem 0;
 }
 
 .avatar {
@@ -77,9 +87,23 @@ h1, h2, h3 {
 }
 
 .about, .projects, .contact {
-  padding: 2rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 700px) {
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-left {
+    text-align: center;
+  }
 }
 
 .skills {
@@ -88,36 +112,31 @@ h1, h2, h3 {
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0;
+  margin: 1rem 0;
 }
 
-.skills li {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.skill-badge {
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  color: #000;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
+  font-size: 0.85rem;
 }
 
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+.advantages {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
 }
 
-.filter-btn {
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+.advantages li {
+  margin-bottom: 0.5rem;
 }
 
-.filter-btn:hover, .filter-btn:focus, .filter-btn.active {
-  transform: translateY(-2px);
-  box-shadow: 0 0 8px var(--accent1);
-  outline: none;
+.projects-placeholder {
+  text-align: center;
+  padding: 2rem 0;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
 }
 
 .project-grid {
@@ -203,7 +222,20 @@ h1, h2, h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact .btn {
+  min-width: 150px;
+}
+
+.contact hr {
+  max-width: 200px;
+  margin: 0.5rem auto 1rem;
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
 }
 
 .back-to-top {

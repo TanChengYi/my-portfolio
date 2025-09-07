@@ -3,71 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John Doe | Futuristic Portfolio</title>
-  <meta name="description" content="Portfolio of John Doe - futuristic web developer." />
+  <title>Jack Tan | Software Engineer</title>
+  <meta name="description" content="Jack Tan is a full-stack software engineer based in Penang, Malaysia, passionate about building scalable systems and modern user experiences." />
   <link rel="icon" href="assets/avatar.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-  <meta property="og:title" content="John Doe | Futuristic Portfolio" />
-  <meta property="og:description" content="Portfolio of John Doe - futuristic web developer." />
+  <meta property="og:title" content="Jack Tan | Software Engineer" />
+  <meta property="og:description" content="Full-stack developer with strong foundation in .NET and web development, passionate about building scalable systems and modern user experiences." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yourusername.github.io/my-portfolio/" />
   <meta property="og:image" content="assets/avatar.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="John Doe | Futuristic Portfolio" />
-  <meta name="twitter:description" content="Portfolio of John Doe - futuristic web developer." />
+  <meta name="twitter:title" content="Jack Tan | Software Engineer" />
+  <meta name="twitter:description" content="Full-stack developer with strong foundation in .NET and web development, passionate about building scalable systems and modern user experiences." />
   <meta name="twitter:image" content="assets/avatar.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="navbar" aria-label="Main navigation">
-    <ul class="nav-links">
-      <li><a href="#about" class="nav-link" tabindex="0">About</a></li>
-      <li><a href="#projects" class="nav-link" tabindex="0">Projects</a></li>
-      <li><a href="#contact" class="nav-link" tabindex="0">Contact</a></li>
-    </ul>
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" tabindex="0">About</a></li>
+        <li><a href="#projects" class="nav-link" tabindex="0">Projects</a></li>
+        <li><a href="#contact" class="nav-link" tabindex="0">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <header id="hero" class="hero" tabindex="0">
-    <img src="assets/avatar.svg" alt="Avatar" class="avatar" loading="lazy" />
-    <h1 class="name">John Doe</h1>
-    <p class="intro">Futuristic web developer with a passion for sleek design and interactive experiences.</p>
+    <div class="container hero-content">
+      <img src="assets/avatar.svg" alt="Avatar" class="avatar" loading="lazy" />
+      <h1 class="name">Jack Tan</h1>
+      <p class="title">Software Engineer</p>
+      <p class="location">Penang, Malaysia</p>
+      <p class="intro">Full-stack developer with strong foundation in .NET and web development, passionate about building scalable systems and modern user experiences.</p>
+    </div>
   </header>
 
   <section id="about" class="about" tabindex="0">
-    <h2>About</h2>
-    <p>Skills & Technologies</p>
-    <ul class="skills">
-      <li>JavaScript</li>
-      <li>Vue</li>
-      <li>React</li>
-      <li>Node.js</li>
-      <li>.NET</li>
-      <li>Telegram Bots</li>
-    </ul>
+    <div class="container about-container">
+      <div class="about-left">
+        <img src="assets/avatar.svg" alt="Jack Tan" class="avatar" loading="lazy" />
+      </div>
+      <div class="about-right">
+        <h2>About</h2>
+        <p>I build scalable web and cloud solutions with a focus on clean architecture and modern user interfaces.</p>
+        <ul class="skills">
+          <li class="skill-badge">C#</li>
+          <li class="skill-badge">.NET Core</li>
+          <li class="skill-badge">ASP.NET MVC &amp; Web API</li>
+          <li class="skill-badge">JavaScript</li>
+          <li class="skill-badge">Vue.js</li>
+          <li class="skill-badge">React</li>
+          <li class="skill-badge">SQL</li>
+          <li class="skill-badge">PostgreSQL</li>
+          <li class="skill-badge">HTML</li>
+          <li class="skill-badge">CSS</li>
+          <li class="skill-badge">Git</li>
+          <li class="skill-badge">Azure</li>
+        </ul>
+        <ul class="advantages">
+          <li>快速学习与适应</li>
+          <li>关注细节与可维护性</li>
+          <li>良好沟通与协作</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="projects" class="projects" tabindex="0">
-    <h2>Projects</h2>
-    <div class="filters" role="group" aria-label="Project filters">
-      <button class="filter-btn active" data-stack="All" aria-label="Show all projects">All</button>
-      <button class="filter-btn" data-stack="Vue" aria-label="Filter Vue projects">Vue</button>
-      <button class="filter-btn" data-stack="React" aria-label="Filter React projects">React</button>
-      <button class="filter-btn" data-stack="Node" aria-label="Filter Node projects">Node</button>
-      <button class="filter-btn" data-stack=".NET" aria-label="Filter .NET projects">.NET</button>
-      <button class="filter-btn" data-stack="Telegram" aria-label="Filter Telegram projects">Telegram</button>
+    <div class="container">
+      <h2>Projects</h2>
+      <div id="project-grid" class="project-grid"></div>
     </div>
-    <div id="project-grid" class="project-grid"></div>
   </section>
 
   <section id="contact" class="contact" tabindex="0">
-    <h2>Contact</h2>
-    <div class="contact-actions">
-      <a href="mailto:john@example.com" class="btn" aria-label="Send email" tabindex="0">Email Me</a>
-      <a href="assets/resume.pdf" class="btn" aria-label="Download resume" download tabindex="0">Download Resume</a>
-      <a href="https://github.com/johndoe" class="btn" target="_blank" rel="noopener" aria-label="GitHub" tabindex="0">GitHub</a>
-      <a href="https://www.linkedin.com/in/johndoe" class="btn" target="_blank" rel="noopener" aria-label="LinkedIn" tabindex="0">LinkedIn</a>
+    <div class="container">
+      <h2>Contact</h2>
+      <hr />
+      <div class="contact-actions">
+        <a href="mailto:tanchengyi1997@gmail.com" class="btn" aria-label="Email" tabindex="0">Email</a>
+        <a href="https://github.com/TanChengYi" class="btn" target="_blank" rel="noopener" aria-label="GitHub" tabindex="0">GitHub</a>
+        <a href="https://www.linkedin.com/in/jack-tan-3546011b3/" class="btn" target="_blank" rel="noopener" aria-label="LinkedIn" tabindex="0">LinkedIn</a>
+      </div>
     </div>
   </section>
 
