@@ -3,21 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('header, section');
   const backToTop = document.getElementById('back-to-top');
   const projectGrid = document.getElementById('project-grid');
-  const filterBtns = document.querySelectorAll('.filter-btn');
 
   fetch('data/projects.json')
     .then(res => res.json())
     .then(projects => {
-      renderProjects(projects);
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const stack = btn.dataset.stack;
-          const filtered = stack === 'All' ? projects : projects.filter(p => p.stack.includes(stack));
-          renderProjects(filtered);
-        });
-      });
+      if (projects.length === 0) {
+        const placeholder = document.createElement('p');
+        placeholder.className = 'projects-placeholder';
+        placeholder.textContent = '🚀 Projects coming soon…';
+        projectGrid.appendChild(placeholder);
+      } else {
+        renderProjects(projects);
+      }
     });
 
   function renderProjects(list) {
@@ -82,6 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
   topObserver.observe(hero);
 
   backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const options = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ? { top: 0 }
+      : { top: 0, behavior: 'smooth' };
+    window.scrollTo(options);
   });
 });
