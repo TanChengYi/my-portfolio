@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('header, section');
   const backToTop = document.getElementById('back-to-top');
   const projectGrid = document.getElementById('project-grid');
+  const navbar = document.querySelector('.navbar');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   fetch('data/projects.json')
     .then(res => res.json())
@@ -78,10 +80,57 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   topObserver.observe(hero);
 
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('sticky-shadow', window.scrollY > 0);
+  });
+
   backToTop.addEventListener('click', () => {
     const options = window.matchMedia('(prefers-reduced-motion: reduce)').matches
       ? { top: 0 }
       : { top: 0, behavior: 'smooth' };
     window.scrollTo(options);
   });
+
+  const heroSection = document.querySelector('.hero-about');
+  if (heroSection) {
+    const revealItems = heroSection.querySelectorAll('.reveal-item');
+    const counts = heroSection.querySelectorAll('.count');
+
+    if (prefersReduced) {
+      heroSection.classList.add('visible');
+      revealItems.forEach(el => el.classList.add('visible'));
+      counts.forEach(c => (c.textContent = c.dataset.count));
+    } else {
+      const heroObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            heroSection.classList.add('visible');
+            revealItems.forEach((el, i) => {
+              setTimeout(() => el.classList.add('visible'), i * 60);
+            });
+            counts.forEach(animateCount);
+            heroObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      heroObserver.observe(heroSection);
+    }
+  }
+
+  function animateCount(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const duration = 1000;
+    let start = null;
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target;
+      }
+    }
+    requestAnimationFrame(step);
+  }
 });
