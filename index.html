@@ -3,45 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>John Doe | Futuristic Portfolio</title>
+  <meta name="description" content="Portfolio of John Doe - futuristic web developer." />
+  <link rel="icon" href="assets/avatar.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="John Doe | Futuristic Portfolio" />
+  <meta property="og:description" content="Portfolio of John Doe - futuristic web developer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/my-portfolio/" />
+  <meta property="og:image" content="assets/avatar.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="John Doe | Futuristic Portfolio" />
+  <meta name="twitter:description" content="Portfolio of John Doe - futuristic web developer." />
+  <meta name="twitter:image" content="assets/avatar.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <img src="assets/avatar.svg" alt="Avatar" class="avatar" />
+  <nav class="navbar" aria-label="Main navigation">
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link" tabindex="0">About</a></li>
+      <li><a href="#projects" class="nav-link" tabindex="0">Projects</a></li>
+      <li><a href="#contact" class="nav-link" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="hero" class="hero" tabindex="0">
+    <img src="assets/avatar.svg" alt="Avatar" class="avatar" loading="lazy" />
     <h1 class="name">John Doe</h1>
     <p class="intro">Futuristic web developer with a passion for sleek design and interactive experiences.</p>
   </header>
 
-  <section class="projects">
+  <section id="about" class="about" tabindex="0">
+    <h2>About</h2>
+    <p>Skills & Technologies</p>
+    <ul class="skills">
+      <li>JavaScript</li>
+      <li>Vue</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>.NET</li>
+      <li>Telegram Bots</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects" tabindex="0">
     <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="card">
-        <h3>Project Alpha</h3>
-        <p>Cutting-edge platform that leverages AI for modern solutions.</p>
-        <a href="#" class="btn" target="_blank">View</a>
-      </div>
-      <div class="card">
-        <h3>Project Beta</h3>
-        <p>Immersive VR experience bringing the future to life.</p>
-        <a href="#" class="btn" target="_blank">View</a>
-      </div>
-      <div class="card">
-        <h3>Project Gamma</h3>
-        <p>Decentralized app empowering users through blockchain.</p>
-        <a href="#" class="btn" target="_blank">View</a>
-      </div>
+    <div class="filters" role="group" aria-label="Project filters">
+      <button class="filter-btn active" data-stack="All" aria-label="Show all projects">All</button>
+      <button class="filter-btn" data-stack="Vue" aria-label="Filter Vue projects">Vue</button>
+      <button class="filter-btn" data-stack="React" aria-label="Filter React projects">React</button>
+      <button class="filter-btn" data-stack="Node" aria-label="Filter Node projects">Node</button>
+      <button class="filter-btn" data-stack=".NET" aria-label="Filter .NET projects">.NET</button>
+      <button class="filter-btn" data-stack="Telegram" aria-label="Filter Telegram projects">Telegram</button>
+    </div>
+    <div id="project-grid" class="project-grid"></div>
+  </section>
+
+  <section id="contact" class="contact" tabindex="0">
+    <h2>Contact</h2>
+    <div class="contact-actions">
+      <a href="mailto:john@example.com" class="btn" aria-label="Send email" tabindex="0">Email Me</a>
+      <a href="assets/resume.pdf" class="btn" aria-label="Download resume" download tabindex="0">Download Resume</a>
+      <a href="https://github.com/johndoe" class="btn" target="_blank" rel="noopener" aria-label="GitHub" tabindex="0">GitHub</a>
+      <a href="https://www.linkedin.com/in/johndoe" class="btn" target="_blank" rel="noopener" aria-label="LinkedIn" tabindex="0">LinkedIn</a>
     </div>
   </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li><a href="mailto:john@example.com">Email</a></li>
-      <li><a href="https://github.com/johndoe" target="_blank">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn</a></li>
-    </ul>
-  </section>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" tabindex="0">↑</button>
 
   <script src="script.js"></script>
 </body>
