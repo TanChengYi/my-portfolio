@@ -54,3 +54,9 @@ The chosen theme is stored in `localStorage` and re-applied on future visits. Yo
 - `?theme=corporate`
 
 To add a new theme, create a CSS file under `css/` that defines variables inside `html[data-theme="YOUR_THEME"] { ... }` and reference it in `index.html`.
+
+## Hero/About section
+
+- The hero and about content are combined into a two-column layout on large screens.
+- Highlight numbers are configured via the `data-count` attributes in `index.html`.
+- Animations respect `prefers-reduced-motion` and can be disabled by setting `data-decor="off"` on the `<html>` tag to remove background decoration.
