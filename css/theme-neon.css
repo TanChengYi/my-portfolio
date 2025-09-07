@@ -1,0 +1,22 @@
+html[data-theme="neon"] {
+  --bg-color: #0A0B12;
+  --text-color: #E9ECFF;
+  --text-secondary: #AAB3D6;
+  --accent1: #6AE0FF;
+  --accent2: #B388FF;
+  --accent3: #7AA2FF;
+  --card-bg: #0F1324;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(10, 11, 18, 0.8);
+  --btn-bg: linear-gradient(45deg, var(--accent1), var(--accent2));
+  --btn-text-color: #000;
+  --nav-link-hover: 0 0 6px var(--accent1), 0 0 12px var(--accent2);
+  --card-hover-shadow: 0 0 12px var(--accent2);
+  --btn-hover-shadow: 0 0 8px var(--accent1);
+  --contact-bg: #0F1324;
+  --subtle-bg: rgba(255,255,255,0.1);
+  --text-muted: rgba(255,255,255,0.7);
+  --focus-outline: var(--accent1);
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Orbitron', sans-serif;
+}
